@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Portfolio | Issouf COMPAORE</title>
+
+  <link rel="preload" href="assets/css/tailwind.css" as="style">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+        media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"></noscript>
+
+  <link rel="canonical" href="https://issouf-portfolio.com/" />
+  <meta name="description" content="Portfolio de Issouf COMPAORE spécialisé en systèmes, réseaux et cybersécurité." />
+  <meta name="keywords" content="Issouf COMPAORE, systèmes, réseaux, cybersécurité, IT, portfolio, Zabbix, Proxmox, Azure, AWS" />
+  <meta name="author" content="Issouf COMPAORE" />
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#0f0f13" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://issouf-portfolio.com/" />
+  <meta property="og:title" content="Issouf COMPAORE | Systèmes · Réseaux · Cybersécurité" />
+  <meta property="og:description" content="Portfolio professionnel de Issouf COMPAORE, expert en systèmes, réseaux et cybersécurité." />
+  <meta property="og:image" content="https://issouf-portfolio.com/assets/img/cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Issouf COMPAORE | Systèmes · Réseaux · Cybersécurité" />
+  <meta name="twitter:image" content="https://issouf-portfolio.com/assets/img/cover.jpg" />
+
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <link rel="dns-prefetch" href="https://challenges.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script type="application/ld+json">/* ... ton code JSON-LD actuel ... */
+  </script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+</head>
+
+<!---------------------------------- Corps de la page --------------------------------------------------------------------->
+
+<body class="bg-black text-white font-sans">
+
+  <!-- Loading Screen ------------------------------------------------------------------------------------------->
+  <div id="loading-screen">
+    <div class="loading-container">
+      <div class="loader"></div>
+      <div class="loading-text">Loading Portfolio...</div>
+    </div>
+  </div>
+
+  <!-- Menu Hamburger pour mobile ------------------------------------------------------------------------------------>
+ 
+
+
+<!-- Section Navigation (Sidebar) -------------------------------------------------------------------------------------------->
+<button id="menuBtn" class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav class="sidebar-nav">
+    <div class="nav-header-stacked">
+        <div class="nav-logo">
+            <span class="slash">//</span> Issouf COMPAORE
+        </div>
+        <div class="online-status">
+            <div class="status-led"></div>
+            <span class="status-text">SYSTEM ONLINE</span>
+        </div>
+        <div class="nav-clock-container">
+            <span id="navClock">00:00:00</span>
+        </div>
+    </div>
+
+    <ul class="sidebar-menu">
+        <li>
+            <a href="#accueil" class="nav-link active">
+                <i class="fas fa-terminal"></i> <span>Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="#propos" class="nav-link">
+                <i class="fas fa-user-shield"></i> <span>Profil Sec.</span>
+            </a>
+        </li>
+        <li>
+            <a href="#competences" class="nav-link">
+                <i class="fas fa-network-wired"></i> <span>Infrastructure</span>
+            </a>
+        </li>
+        <li>
+            <a href="#projets" class="nav-link">
+                <i class="fas fa-project-diagram"></i> <span>Projets</span>
+            </a>
+        </li>
+        <li>
+            <a href="#certifications" class="nav-link">
+                <i class="fas fa-file-signature"></i> <span>Certifications</span>
+            </a>
+        </li>
+        <li>
+            <a href="#education" class="nav-link">
+                <i class="fas fa-microchip"></i> <span>Formation</span>
+            </a>
+        </li>
+        <li>
+            <a href="#contact" class="nav-link">
+                <i class="fas fa-satellite-dish"></i> <span>Contact</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="nav-footer">
+        <div class="version-tag">V1.0.0-STABLE</div>
+        <div class="system-tag">© 2026 ROOT ACCESS</div>
+    </div>
+</nav>
+
+<!-------FIN------section Navigation (Sidebar) -------------------------------------------------------------------------------------------->
+
+
+
+
+
+<!-- Section Accueil ---------------------------------------------------------------------------------------------------->
+
+<section id="accueil" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-5 pb-10 px-4">
+    <div class="section-overlay"></div>
+
+    <div class="flex flex-col lg:flex-row-reverse items-center w-full max-w-7xl z-20 lg:ml-72">
+        <div class="lg:w-1/2 w-full flex justify-center relative mb-2 lg:mb-0">
+            <div class="orbit-container">
+                <div class="orbit-icons-wrapper">
+                    <i class="fab fa-docker icon-1" style="color: #2496ed !important;"></i>
+                    <i class="fab fa-linux icon-2" style="color: #f5f5f5 !important;"></i>
+                    <i class="fas fa-shield-alt icon-3" style="color: #ff4b2b !important;"></i>
+                    <i class="fas fa-network-wired icon-4" style="color: #00ccff !important;"></i>
+                </div>
+                <img src="assets/Profile/Profile.png" alt="Issouf COMPAORE" class="profile-img-large">
+            </div>
+            <div class="system-status-tags hidden lg:block">
+                <div class="tag-item"><span class="label">STATUS:</span> <span class="value">ACTIVE</span></div>
+                <div class="tag-item"><span class="label">SEC-LEVEL:</span> <span class="value">OPTIMAL</span></div>
+            </div>
+        </div>
+
+        <div class="lg:w-1/2 w-full flex flex-col items-center lg:items-start text-center lg:text-left">
+            <h1 class="hero-title-main">Issouf <span class="last-name">COMPAORE</span></h1>
+            
+            <div class="typewriter-container">
+                <h2 id="typewriter" class="job-title"></h2>
+                <span class="cursor">|</span>
+            </div>
+
+            <div class="social-links-grid">
+                <a href="#" class="social-icon linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon github" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon email" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="social-icon whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <div class="cta-container flex rowrap">
+                <a href="assets/CV_Issouf_Compaore.pdf" target="_blank" class="cyber-btn btn-primary">
+                    <span class="btn-content"><i class="fas fa-file-pdf"></i> VOIR CV</span>
+                    <span class="btn-glitch"></span>
+                </a>
+                <a href="#projets" class="cyber-btn btn-secondary">
+                    <span class="btn-content"><i class="fas fa-tasks"></i> PROJETS</span>
+                    <span class="btn-glitch"></span>
+                </a>
+            </div>
+
+            <p class="hero-subtitle">
+                Expertise en infrastructure et passion cybersécurité. Administration de systèmes robustes et réseaux sécurisés.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-------FIN------section Accueil ---------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-- Section À propos ------------------------------------------------------------------------------------------------>
+                  
+<section id="propos" class="about-cyber-system">
+    <div class="glass-core-container" data-aos="zoom-in">
+        
+        <div class="about-header-main">
+            <div class="title-flex">
+                <span class="index-num">01.</span>
+                <h2 class="main-title-neon">/ IDENTITY_ROOT</h2>
+            </div>
+            <div class="kinetic-line"></div>
+        </div>
+
+        <div class="about-grid-layout">
+            
+            <div class="terminal-wrapper">
+                <div class="terminal-bar">
+                    <div class="terminal-actions">
+                        <span class="t-dot r"></span>
+                        <span class="t-dot y"></span>
+                        <span class="t-dot g"></span>
+                    </div>
+                    <div class="terminal-user">issouf@infra-secure:~</div>
+                </div>
+                <div class="terminal-content-area">
+                    <h3 class="cmd-text">cat expertise.md</h3>
+                    <div class="profile-bio">
+                        <p>Futur expert en <strong>Infrastructures Critiques</strong>, je me spécialise dans la conception de réseaux résilients et la sécurisation des systèmes.</p>
+                        <p>Mon parcours est guidé par une maîtrise rigoureuse, allant de l'administration <strong>Windows/Linux</strong> au déploiement <strong>FortiGate</strong> et <strong>Cisco</strong>.</p>
+                    </div>
+                    
+                    <div class="terminal-tags">
+                        <span class="tag">#Firewall</span>
+                        <span class="tag">#Virtualization</span>
+                        <span class="tag">#ActiveDirectory</span>
+                        <span class="tag">#CyberSec</span>
+                    </div>
+                    
+                    <div class="blink-cursor">_</div>
+                </div>
+            </div>
+
+            <div class="cards-side-stack">
+                <div class="m1-card" data-aos="fade-left" data-aos-delay="100">
+                    <div class="angle top-l"></div>
+                    <div class="angle bot-r"></div>
+                    <span class="tag-label">🎓 DIPLÔME_ACTUEL</span>
+                    <h4 class="card-hero-style">Bachelor Administrateur</h4>
+                    <p class="sub-detail">Systèmes & Réseaux Informatiques</p>
+                </div>
+
+                <div class="m1-card" data-aos="fade-left" data-aos-delay="200">
+                    <div class="angle top-l"></div>
+                    <div class="angle bot-r"></div>
+                    <span class="tag-label">🏛️ ECOLE</span>
+                    <h4 class="card-hero-style">Keyce Informatique</h4>
+                    <p class="sub-detail">Campus Tunis | Collège de Paris</p>
+                </div>
+
+                <div class="m1-card" data-aos="fade-left" data-aos-delay="300">
+                    <div class="angle top-l"></div>
+                    <div class="angle bot-r"></div>
+                    <span class="tag-label">📍 LOCALISATION</span>
+                    <h4 class="card-hero-style">Tunisie, Ariana</h4>
+                    <p class="sub-detail">Disponible pour mobilité</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-------FIN------section À propos ---------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!---------------------------------- Section Compétences en Infrastructure ---------------------------------------------------------------------------------------------------->
+
+<section id="competences" class="infra-section">
+    <div class="glass-infra-container" data-aos="zoom-in">
+        
+        <div class="section-header">
+            <div class="title-flex">
+                <span class="index-num">02.</span>
+                <h2 class="main-title-neon">/ INFRASTRUCTURE_SKILLS</h2>
+            </div>
+            <div class="kinetic-line"></div>
+        </div>
+
+        <div class="infra-grid">
+
+            <div class="skill-card-neon" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-content">
+                    <div class="card-status"><span class="dot"></span> ACTIVE</div>
+                    <i class="fas fa-network-wired"></i>
+                    <p>Réseaux Informatiques</p>
+                    <ul class="skill-details">
+                        <li>VLAN, Trunking, Inter-VLAN</li>
+                        <li>OSPF / EIGRP / BGP</li>
+                        <li>VPN IPsec & OpenVPN</li>
+                        <li>Firewalling (FortiGate / PFsense)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skill-card-neon" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-content">
+                    <div class="card-status"><span class="dot"></span> ACTIVE</div>
+                    <i class="fab fa-microsoft"></i>
+                    <p>Windows Server</p>
+                    <ul class="skill-details">
+                        <li>Active Directory & GPO</li>
+                        <li>Durcissement AD (LAPS)</li>
+                        <li>PowerShell Automation</li>
+                        <li>Office 365 Admin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skill-card-neon" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-content">
+                    <div class="card-status"><span class="dot"></span> ACTIVE</div>
+                    <i class="fab fa-linux"></i>
+                    <p>Linux Ops</p>
+                    <ul class="skill-details">
+                        <li>Hardening & ACL avancées</li>
+                        <li>SSH Sec & Fail2ban</li>
+                        <li>Web Servers (Nginx/Apache)</li>
+                        <li>Auditd & Log Management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skill-card-neon" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-content">
+                    <div class="card-status"><span class="dot"></span> ACTIVE</div>
+                    <i class="fas fa-cloud"></i>
+                    <p>Cloud & Virtualisation</p>
+                    <ul class="skill-details">
+                        <li>Proxmox / VMware ESXi</li>
+                        <li>Azure & AWS Essentials</li>
+                        <li>Docker Containers</li>
+                        <li>Backup & DR Strategy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skill-card-neon" data-aos="fade-up" data-aos-delay="500">
+                <div class="card-content">
+                    <div class="card-status"><span class="dot"></span> ACTIVE</div>
+                    <i class="fa-solid fa-desktop"></i>
+                    <p>Monitoring</p>
+                    <ul class="skill-details">
+                        <li>Zabbix & Nagios</li>
+                        <li>Prometheus / Grafana</li>
+                        <li>SNMP & Log Analysis</li>
+                        <li>Incident Management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skill-card-neon sec-special" data-aos="fade-up" data-aos-delay="600">
+                <div class="card-content">
+                    <div class="card-status"><span class="dot red"></span> SECURED</div>
+                    <i class="fas fa-shield-alt"></i>
+                    <p>Cybersécurité</p>
+                    <ul class="skill-details">
+                        <li>Analyse SIEM & IDS/IPS</li>
+                        <li>Pentesting (Nmap, Metasploit)</li>
+                        <li>Vulnerability Scanning</li>
+                        <li>Audits & Hardening</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-------FIN------section Compétences en Infrastructure ---------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+<!-- Section Projets Réalisés ---------------------------------------------------------------------------------------------------->
+
+<section id="projets" class="infra-section">
+    <div class="glass-infra-container" data-aos="zoom-in">
+        <div class="section-header">
+            <div class="title-flex">
+                <span class="index-num">03.</span>
+                <h2 class="main-title-neon">/ REALIZED_PROJECTS</h2>
+            </div>
+            <div class="kinetic-line"></div>
+        </div>
+
+        <div class="infra-grid" id="projects-container">
+            <div class="project-card-neon" data-aos="fade-up">
+                <div class="project-img-container">
+                    <img src="assets/img/projet-ad.png" alt="Active Directory">
+                    <div class="project-overlay-btn">
+                        <button class="voir-btn-neon" onclick="viewProject('assets/docs/projet-ad.pdf')">
+                            <i class="fas fa-eye"></i> EXPLORER
+                        </button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h4 class="card-hero-style">🔒 Infrastructure AD Sécurisée</h4>
+                    <p class="project-desc">Durcissement GPO, LAPS, et automatisation PowerShell.</p>
+                    <div class="project-tags"><span>Windows Server</span><span>Security</span></div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <div style="text-align:center; padding:40px;">
+        <button id="login-btn" onclick="login()" style="opacity:0.4; background:none; border:1px solid #00d4ff; color:#00d4ff; padding:5px 15px; cursor:pointer; font-family:'JetBrains Mono', monospace; font-size:12px;">
+            <i class="fas fa-terminal"></i> ACCÈS_SYSTÈME
+        </button>
+    </div>
+
+    <div id="admin-section" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:10000; align-items:center; justify-content:center;">
+        <div class="terminal-box" style="width:90%; max-width:500px;">
+            <div class="terminal-header">
+                <span class="terminal-dot red" onclick="logout()"></span>
+                <span class="terminal-title">ADMIN_CONSOLE_v3.0</span>
+            </div>
+            <div class="terminal-body">
+                <p class="cmd-text text-green">[SUCCESS] Identité confirmée : Issouf</p>
+                <form id="add-project-form" class="admin-form">
+                    <input type="text" id="proj-title" placeholder="Nom du projet" required class="terminal-input">
+                    <textarea id="proj-desc" placeholder="Détails techniques..." required class="terminal-input"></textarea>
+                    <input type="url" id="proj-image" placeholder="URL Image (GitHub)" required class="terminal-input">
+                    <input type="url" id="proj-pdf" placeholder="URL PDF (GitHub)" required class="terminal-input">
+                    <button type="submit" class="terminal-btn green">DÉPLOYER SUR LE PORTFOLIO</button>
+                </form>
+                <button onclick="logout()" class="terminal-btn red" style="margin-top:10px; width:100%;">DÉCONNEXION</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Section Certifications -->
+  <section id="certifications" class="py-12 md:py-20 px-4 md:px-6">
+    <h2 class="text-4xl heading-animate font-medium text-center mb-12 neon-yellow">
+      <span class="heading-highlight">Certifications</span>
+    </h2>
+
+    <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- Fortinet -->
+      <div class="org-card">
+        <h3 class="org-title">Fortinet</h3>
+        <div class="cert-list collapsed">
+          <div class="cert-item">
+            <p class="cert-name">NSE1 : Introduction to the Threat Landscape 3.0</p>
+            <a href="https://www.credly.com/badges/fortinet-nse1" target="_blank" class="status verified">Vérifié ✓</a>
+          </div>
+        </div>
+        <button class="voir-plus" onclick="toggleCertList(this)">Voir plus</button>
+      </div>
+
+      <!-- Cisco -->
+      <div class="org-card">
+        <h3 class="org-title">Cisco</h3>
+        <div class="cert-list collapsed">
+          <div class="cert-item"><p class="cert-name">CCNA : Networking Basics</p><span class="status pending">En cours ⏳</span></div>
+          <div class="cert-item"><p class="cert-name">CCNA : Introduction to Networks</p><a href="https://www.credly.com/badges/ccna-networks" target="_blank" class="status verified">Vérifié ✓</a></div>
+          <div class="cert-item"><p class="cert-name">CCNA : Switching, Routing & Wireless Essentials</p><span class="status pending">En cours ⏳</span></div>
+          <div class="cert-item"><p class="cert-name">CCNA : Enterprise Networking, Security & Automation</p><span class="status pending">En cours ⏳</span></div>
+          <div class="cert-item"><p class="cert-name">Introduction to Cybersecurity</p><a href="https://www.credly.com/badges/cisco-cyber" target="_blank" class="status verified">Vérifié ✓</a></div>
+          <div class="cert-item"><p class="cert-name">Sécurité des Terminaux</p><span class="status pending">En cours ⏳</span></div>
+          <div class="cert-item"><p class="cert-name">Défense du Réseau</p><span class="status pending">En cours ⏳</span></div>
+          <div class="cert-item"><p class="cert-name">Gestion des Cybermenaces</p><span class="status pending">En cours ⏳</span></div>
+          <div class="cert-item"><p class="cert-name">Parcours Analyste Junior en Cybersécurité</p><span class="status pending">En cours ⏳</span></div>
+        </div>
+        <button class="voir-plus" onclick="toggleCertList(this)">Voir plus</button>
+      </div>
+
+      <!-- Microsoft -->
+      <div class="org-card">
+        <h3 class="org-title">Microsoft</h3>
+        <div class="cert-list collapsed">
+          <div class="cert-item">
+            <p class="cert-name">Microsoft Office Specialist: Associate (Office 2019)</p>
+            <a href="https://www.credly.com/badges/microsoft-office" target="_blank" class="status verified">Vérifié ✓</a>
+          </div>
+        </div>
+        <button class="voir-plus" onclick="toggleCertList(this)">Voir plus</button>
+      </div>
+
+      <!-- IBM -->
+      <div class="org-card">
+        <h3 class="org-title">IBM</h3>
+        <div class="cert-list collapsed">
+          <div class="cert-item">
+            <p class="cert-name">IBM Cybersecurity Analyst Professional Certificate</p>
+            <span class="status pending">En cours ⏳</span>
+          </div>
+          <div class="cert-item">
+            <p class="cert-name">IBM Cloud Essentials</p>
+            <span class="status pending">En cours ⏳</span>
+          </div>
+        </div>
+        <button class="voir-plus" onclick="toggleCertList(this)">Voir plus</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+<!-- Section Éducation & Qualifications -->
+<section id="education" class="py-12 md:py-20 px-4 md:px-6">
+  <h2 class="text-4xl heading-animate font-medium text-center mb-12 neon-yellow">
+    <span class="heading-highlight">Éducation & Qualifications</span>
+  </h2>
+
+  <div class="timeline-stair">
+
+    <!-- Bachelor -->
+    <div class="timeline-step top">
+      <div class="step-card" data-tooltip="🎖️ Bourse partielle | Mention : Très Bien">
+        <h3 class="diplome">Bachelor Informatique en Administration Réseau</h3>
+        <p class="ecole">Collège de Paris | Campus Tunisie</p>
+        <p class="date">Depuis septembre 2024</p>
+      </div>
+    </div>
+
+    <!-- BTS -->
+    <div class="timeline-step bottom">
+      <div class="step-card" data-tooltip="🎖️ Bourse complète | 🏆 Major de promotion | Mention : Excellent">
+        <h3 class="diplome">BTS en Infrastructures et Réseaux d'Accès</h3>
+        <p class="ecole">Centre Sectoriel de Formation en Télécommunication, Tunis</p>
+        <p class="date">Depuis septembre 2023</p>
+      </div>
+    </div>
+
+    <!-- Bac -->
+    <div class="timeline-step top">
+      <div class="step-card" data-tooltip="📜 Mention : Bien">
+        <h3 class="diplome">Baccalauréat Technologique (Série F2 : Électronique)</h3>
+        <p class="ecole">Centre Polytechnique, Ouagadougou</p>
+        <p class="date">Septembre 2020 – Juillet 2021</p>
+      </div>
+    </div>
+
+    <!-- BEP -->
+    <div class="timeline-step bottom">
+      <div class="step-card" data-tooltip="📜 Mention : Très Bien">
+        <h3 class="diplome">BEP Électronique</h3>
+        <p class="ecole">Lycée Professionnel Dr Bruno BUCHWIESER, Ouagadougou</p>
+        <p class="date">Octobre 2019 – Juillet 2020</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Section Contact -->
+<section id="contact" class="py-12 md:py-20 px-4 md:px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl heading-animate font-medium mb-12 neon-yellow">
+      <span class="heading-highlight">N'hésitez pas, contactez-moi</span>
+    </h2>
+
+    <div class="flex justify-center space-x-6 mb-8">
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/compaore-issouf/" target="_blank" class="linkedin-icon text-3xl">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/issoufcompaore" target="_blank" class="github-icon text-3xl">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:icompaore554@gmail.com" class="email-icon text-3xl">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/22665675785" target="_blank" class="whatsapp-icon text-3xl">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <!-- Formulaire -->
+    <form class="contact-form">
+      <input type="text" placeholder="Votre nom" class="contact-input">
+      <input type="email" placeholder="votre.email@exemple.com" class="contact-input">
+      <input type="tel" placeholder="Votre numéro de téléphone" class="contact-input">
+      <textarea rows="4" placeholder="Votre message..." class="contact-input"></textarea>
+      <button type="submit" class="contact-btn">Envoyer un message</button>
+    </form>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+/* ==========================================================================
+   SCRIPT GLOBAL - PORTFOLIO ISSOUF COMPAORE
+   ========================================================================== 
+*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. INITIALISATION GSAP ---
+    // Enregistre le plugin pour les animations au scroll
+    if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+    }
+
+    // --- 2. GESTION DU LOADER ---
+    const loader = document.getElementById('loading-screen');
+    const hideLoader = () => {
+        if (loader && !loader.classList.contains('fade-out')) {
+            loader.classList.add('fade-out');
+            setTimeout(() => { loader.style.display = 'none'; }, 600);
+        }
+    };
+    // Cache le loader quand tout est chargé OU après 3 secondes max
+    window.addEventListener('load', hideLoader);
+    setTimeout(hideLoader, 3000);
+
+    // --- 3. HORLOGE TEMPS RÉEL ---
+    function updateClock() {
+        const clockEl = document.getElementById('navClock');
+        if (clockEl) {
+            clockEl.textContent = new Date().toLocaleTimeString('fr-FR', { 
+                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false 
+            });
+        }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // --- 4. GESTION DU MENU MOBILE (VERSION UNIFIÉE) ---
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.querySelector('.sidebar-nav');
+    
+    // Création dynamique de l'overlay (fond sombre) pour éviter de modifier le HTML
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+
+    const toggleMenu = () => {
+        sidebar.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+        overlay.classList.toggle('active');
+    };
+
+    if (menuBtn && sidebar) {
+        // Clic sur le bouton hamburger
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Clic sur l'ombre (ferme le menu)
+        overlay.addEventListener('click', toggleMenu);
+
+        // Fermeture automatique quand on clique sur un lien du menu
+        const navLinks = sidebar.querySelectorAll('.nav-link, a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                menuBtn.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+    }
+
+    // --- 5. EFFET TYPEWRITER (MACHINE À ÉCRIRE) ---
+    const textElement = document.getElementById('typewriter');
+    const phrases = [
+        "Admin Systèmes & Réseaux", 
+        "Passionné par la Sécurité Informatique", 
+        "Curieux et Toujours en Apprentissage"
+    ];
+
+    if (textElement) {
+        let pIdx = 0, cIdx = 0, isDeleting = false;
+        function type() {
+            const currentPhrase = phrases[pIdx];
+            textElement.textContent = isDeleting 
+                ? currentPhrase.substring(0, cIdx - 1) 
+                : currentPhrase.substring(0, cIdx + 1);
+            
+            cIdx = isDeleting ? cIdx - 1 : cIdx + 1;
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && cIdx === currentPhrase.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Pause à la fin du texte
+            } else if (isDeleting && cIdx === 0) {
+                isDeleting = false;
+                pIdx = (pIdx + 1) % phrases.length;
+                typeSpeed = 500; // Pause avant de recommencer
+            }
+            setTimeout(type, typeSpeed);
+        }
+        type();
+    }
+
+    // --- 6. ANIMATIONS GSAP AU CHARGEMENT ---
+    gsap.from(".hero-text", { opacity: 0, y: 50, duration: 1.2, ease: "power3.out" });
+    gsap.from(".profile-img", { opacity: 0, scale: 0.8, duration: 1.2, delay: 0.3 });
+    
+    // Animation spécifique à la section "A Propos" au scroll
+    gsap.from(".glass-container", {
+        scrollTrigger: { trigger: "#propos", start: "top 80%" },
+        opacity: 0, y: 40, duration: 1, ease: "power3.out"
+    });
+});
+
+// --- 7. SCROLLSPY (MISE À JOUR DES LIENS ACTIFS AU SCROLL) ---
+// Placé hors du DOMContentLoaded pour éviter tout ralentissement
+window.addEventListener("scroll", () => {
+    let currentSectionId = "";
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".sidebar-menu .nav-link");
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 200) {
+            currentSectionId = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(currentSectionId)) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCIJv7JdsQDwQaGiWqAFb7MkfFoTnmXEGQ",
+    authDomain: "portfolio-admin-12591.firebaseapp.com",
+    projectId: "portfolio-admin-12591",
+    storageBucket: "portfolio-admin-12591.firebasestorage.app",
+    messagingSenderId: "612125185242",
+    appId: "1:612125185242:web:740aa946e952516ab2c1e3"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // --- 1. GESTION DE LA CONNEXION ---
+  window.login = () => {
+    signInWithPopup(auth, provider).catch(error => console.error("Erreur login:", error));
+  };
+
+  window.logout = () => {
+    signOut(auth).then(() => location.reload());
+  };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user && user.email === "icompaore554@gmail.com") {
+      const adminSec = document.getElementById('admin-section');
+      const loginBtn = document.getElementById('login-btn');
+      
+      if(adminSec) {
+        // Remplace 'block' par 'flex' pour activer le centrage configuré dans ton HTML
+        adminSec.style.display = 'flex'; 
+      }
+      if(loginBtn) loginBtn.style.display = 'none';
+    }
+});
+
+  // --- 2. AFFICHAGE DYNAMIQUE DES PROJETS ---
+  const loadProjects = async () => {
+    const projectsContainer = document.getElementById('projects-container'); // Assure-toi d'avoir cette ID dans ton HTML
+    if (!projectsContainer) return;
+
+    const q = query(collection(db, "projets"), orderBy("date", "desc"));
+    const querySnapshot = await getDocs(q);
+    
+    projectsContainer.innerHTML = ''; // Vide le conteneur avant de charger
+
+    querySnapshot.forEach((doc) => {
+      const p = doc.data();
+      projectsContainer.innerHTML += `
+        <div class="project-card">
+          <img src="${p.image}" alt="${p.titre}" style="width:100%; border-radius:8px;">
+          <h4>${p.titre}</h4>
+          <p>${p.description}</p>
+          <button onclick="viewProject('${p.pdf}')" class="btn-view">Voir le Projet</button>
+        </div>
+      `;
+    });
+  };
+  loadProjects();
+
+  // --- 3. ENVOI DES DONNÉES VERS FIRESTORE ---
+  const projectForm = document.getElementById('add-project-form');
+  if(projectForm) {
+    projectForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        try {
+          await addDoc(collection(db, "projets"), {
+            titre: document.getElementById('proj-title').value,
+            description: document.getElementById('proj-desc').value,
+            image: document.getElementById('proj-image').value,
+            pdf: document.getElementById('proj-pdf').value,
+            date: new Date()
+          });
+          alert("Projet ajouté avec succès !");
+          projectForm.reset();
+          loadProjects(); // Recharge la liste sans rafraîchir la page
+        } catch (error) {
+          alert("Erreur lors de l'ajout : " + error.message);
+        }
+    });
+  }
+
+  // --- 4. SYSTÈME DE VUE SÉCURISÉE (ANTI-TÉLÉCHARGEMENT) ---
+  window.viewProject = function(url) {
+    const viewer = document.getElementById('secure-viewer');
+    const iframe = document.getElementById('pdf-frame');
+    
+    // Utilisation du lecteur Google pour masquer les options de téléchargement natives
+    iframe.src = `https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true`;
+    viewer.style.display = 'block';
+    
+    // Blocage du clic droit sur la zone de protection
+    const layer = document.getElementById('protection-layer');
+    if(layer) {
+        layer.oncontextmenu = (e) => {
+            e.preventDefault();
+            alert("Protection des documents active.");
+            return false;
+        };
+    }
+  };
+
+  window.closeViewer = () => {
+    document.getElementById('secure-viewer').style.display = 'none';
+    document.getElementById('pdf-frame').src = "";
+  };
+</script>
+
+
+</body>
+</html>
+

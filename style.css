@@ -1,0 +1,1667 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================Section Certifications ==========================================*/
+/* Titre lumineux doré */
+#certifications h2 .heading-highlight {
+  display: inline-block;
+  padding: 0.6rem 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffd700; /* doré */
+  background: rgba(0, 0, 0, 0.4); /* noir transparent clair */
+  border: 2px solid #ffd700;
+  border-radius: 40px;
+  box-shadow: 0 0 12px #ffd700, 0 0 24px #ffd700;
+  text-shadow: 0 0 6px #ffd700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+#certifications h2 .heading-highlight:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px #ffd700, 0 0 36px #ffd700;
+}
+
+/* Grille des certifications */
+#certifications .certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Evite le chevauchement avec la sidebar (Barrre de navigation) */
+#certifications {
+  margin-left: 220px; /* largeur exacte de la sidebar */
+  padding-right: 20px; /* espace à droite */
+  position: relative;
+  z-index: 20; /* assure que le contenu passe au-dessus */
+}
+
+.cert-list.collapsed {
+  max-height: 150px; /* limite affichage */
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.cert-list.expanded {
+  max-height: 2000px; /* assez grand pour tout afficher */
+  transition: max-height 0.5s ease;
+}
+
+.voir-plus {
+  margin-top: 1rem;
+  background: #ffd700;
+  color: #000;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.voir-plus:hover {
+  background: #8a2be2;
+  color: #fff;
+  box-shadow: 0 0 12px #ffd700, 0 0 24px #8a2be2;
+}
+
+.status.verified {
+  background: #28a745; /* vert premium */
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #fff; /* blanc élégant */
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Carte organisation */
+.org-card {
+  background: linear-gradient(145deg, rgba(25,25,50,0.95), rgba(45,0,75,0.85));
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+              0 0 40px rgba(138, 43, 226, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.org-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6),
+              0 0 50px rgba(138, 43, 226, 0.5);
+}
+
+/* Titre organisation */
+.org-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Liste réduite par défaut */
+.cert-list.collapsed {
+  max-height: 150px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+/* Liste élargie */
+.cert-list.expanded {
+  max-height: 2000px;
+  transition: max-height 0.5s ease;
+}
+
+/* Certification item */
+.cert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.6rem 0;
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.05); /* léger contraste */
+  border-radius: 8px;
+}
+
+/* Statuts */
+.status.verified {
+  background: #28a745; /* vert premium */
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #fff; /* blanc élégant */
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Bouton Voir plus */
+.voir-plus {
+  margin-top: 1rem;
+  background: #ffd700;
+  color: #000;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.voir-plus:hover {
+  background: #8a2be2;
+  color: #fff;
+  box-shadow: 0 0 12px #ffd700, 0 0 24px #8a2be2;
+}
+
+
+
+
+
+
+/* =============================================Section Éducation & Qualifications ======================================*/
+/* ======= Frise horizontale en escalier ========= */
+.timeline-stair {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 220px;
+  padding: 2rem 0;
+}
+
+.timeline-stair::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ffd700; /* ligne dorée */
+}
+
+.timeline-step {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+.timeline-step.top .step-card { margin-bottom: 80px; }
+.timeline-step.bottom .step-card { margin-top: 80px; }
+
+/* ======================= Carte diplôme ======================= */
+.step-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(25,25,50,0.95), rgba(45,0,75,0.85));
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+              0 0 40px rgba(138, 43, 226, 0.3);
+  opacity: 0; /* caché avant animation GSAP */
+  transform: translateY(30px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6),
+              0 0 50px rgba(138, 43, 226, 0.5);
+}
+
+/* ======================= Tooltip élégant ======================= */
+.step-card::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff; /* fond blanc élégant */
+  color: #000; /* texte noir */
+  border: 1px solid #ccc; /* bordure grise */
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Flèche grise sous le tooltip */
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent; /* flèche blanche */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.step-card:hover::after,
+.step-card:hover::before {
+  opacity: 1;
+}
+
+/* ======================= Styles texte ======================= */
+.diplome {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 0.3rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.ecole {
+  font-size: 1rem;
+  font-style: italic;
+  color: #00ffff;
+  margin-bottom: 0.2rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* ======================= Responsive ======================= */
+@media (max-width: 768px) {
+  .timeline-stair {
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .timeline-stair::before {
+    top: 0;
+    left: 20px;
+    width: 3px;
+    height: 100%;
+  }
+  .timeline-step { text-align: left; margin-bottom: 2rem; }
+  .step-card { margin-left: 60px; margin-top: 0; margin-bottom: 0; }
+}
+
+/* Carte diplôme */
+.step-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(25,25,50,0.95), rgba(45,0,75,0.85));
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+              0 0 40px rgba(138, 43, 226, 0.3);
+  opacity: 0; /* caché avant animation GSAP */
+  transform: translateY(30px) scale(1) rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/* Effet hover : glow doré uniquement pendant le survol */
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px #ffd700, 0 0 36px #ffd700;
+}
+
+/* Titre lumineux doré */
+#education h2 .heading-highlight {
+  display: inline-block;
+  padding: 0.6rem 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffd700; /* doré */
+  background: rgba(0, 0, 0, 0.4); /* noir transparent clair */
+  border: 2px solid #ffd700;
+  border-radius: 40px;
+  box-shadow: 0 0 12px #ffd700, 0 0 24px #ffd700;
+  text-shadow: 0 0 6px #ffd700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+#education h2 .heading-highlight:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px #ffd700, 0 0 36px #ffd700;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  border-left: 3px solid #ffd700;
+  padding-left: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================Section Contact ======================================*/
+
+/* Formulaire centré et compact */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Champs */
+.contact-input {
+  background: rgba(25,25,50,0.9);
+  border: 2px solid rgba(0,255,255,0.4);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.contact-input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 10px #ffd700;
+  outline: none;
+}
+
+/* Bouton */
+.contact-btn {
+  background: linear-gradient(90deg, #00ffff, #ffd700);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  color: #111;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-self: center; /* centre le bouton */
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffd700, 0 0 40px #00ffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #contact {
+    padding: 2rem 1rem; /* réduit le padding sur mobile */
+  }
+  .contact-form {
+    max-width: 100%; /* prend toute la largeur */
+  }
+}
+
+
+/* Evite le chevauchement avec la sidebar */
+#contact {
+  margin-left: 220px; /* largeur exacte de la sidebar */
+  padding-right: 20px; /* espace à droite */
+  position: relative;
+  z-index: 20; /* assure que le contenu passe au-dessus */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==============================================ÉCRAN DE CHARGEMENT (LOADING SCREEN) ===================================== */
+/* --- ÉCRAN DE CHARGEMENT --- */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101000;
+    /* On garde une transition fluide pour l'opacité */
+    transition: opacity 30s ease, visibility 30s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-container {
+    text-align: center;
+}
+
+/* Le cercle qui tourne */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 204, 255, 0.1);
+    border-top: 5px solid #00CCFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.loading-text {
+    color: #00CCFF;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- CLASSE DE DISPARITION (CRITIQUE) --- */
+/* On utilise !important pour surcharger tout style inline qui bloquerait l'affichage */
+#loading-screen.fade-out {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none; 
+}
+
+/* ==================FIN=================FIN DE L'ÉCRAN DE CHARGEMENT (LOADING SCREEN) ================FIN===================*/
+
+
+
+
+
+/* =============================================================SIDEBAR (Barre de navigation)==========================================*/
+
+/* --- CONFIGURATION GÉNÉRALE --- */
+:root {
+    --nav-bg: #050a14;
+    --nav-border: rgba(0, 255, 255, 0.1);
+    --cyber-blue: #00ccff;
+    --cyber-glow: rgba(0, 204, 255, 0.5);
+    --text-muted: #94a3b8;
+    --text-bright: #ffffff;
+}
+
+.sidebar-nav {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--nav-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pour caler le footer en bas */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10000;
+    border-right: 1px solid var(--nav-border);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- HEADER : Logo, LED et Horloge --- */
+.nav-header-stacked {
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.nav-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.nav-logo .slash {
+    color: var(--cyber-blue);
+    margin-right: 5px;
+}
+
+.online-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.status-led {
+    width: 8px;
+    height: 8px;
+    background-color: #00ff41; /* Vert Terminal */
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ff41;
+}
+
+.status-text {
+    font-size: 0.65rem;
+    color: #00ff41;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.nav-clock-container {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --- MENU : Liens et Icônes --- */
+.sidebar-menu {
+    flex-grow: 1;
+    padding: 20px 0;
+    list-style: none;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 25px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-link i {
+    width: 20px;
+    font-size: 1.1rem;
+    color: var(--cyber-blue);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+/* État Hover & Active */
+.nav-link:hover, .nav-link.active {
+    background: rgba(0, 204, 255, 0.05);
+    color: var(--text-bright);
+}
+
+.nav-link.active {
+    border-left-color: var(--cyber-blue);
+    background: linear-gradient(90deg, rgba(0, 204, 255, 0.1) 0%, transparent 100%);
+}
+
+.nav-link.active i {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px var(--cyber-blue));
+}
+
+/* --- FOOTER : Versioning --- */
+.nav-footer {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.version-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--cyber-blue);
+    background: rgba(0, 204, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.system-tag {
+    font-size: 0.6rem;
+    color: #475569;
+    letter-spacing: 1px;
+}
+
+/* --- RESPONSIVE : MOBILE (VERSION UNIFIÉE) --- */
+@media (max-width: 1024px) {
+    /* 1. Force l'affichage du bouton hamburger */
+    .hamburger-menu {
+        display: flex !important;
+        position: fixed !important;
+        top: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+        background: rgba(5, 10, 20, 0.95) !important;
+        border: 1px solid #00ccff !important;
+        border-radius: 5px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        z-index: 110000 !important;
+        cursor: pointer;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #ffb703 !important;
+        border-radius: 2px;
+    }
+
+    /* 2. La barre latérale (Sidebar) */
+    .sidebar-nav {
+        display: flex !important; /* Toujours en flex pour garder la structure */
+        flex-direction: column !important;
+        position: fixed;
+        top: 0;
+        left: -280px; /* Cachée hors de l'écran à gauche */
+        width: 260px;
+        height: 100vh;
+        background: #050a14 !important;
+        z-index: 105000;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding-top: 80px;
+        border-right: 1px solid rgba(0, 255, 255, 0.2);
+    }
+
+    /* 3. Activation du menu */
+    .sidebar-nav.active {
+        transform: translateX(280px) !important; /* Glisse vers la droite */
+    }
+
+    /* 4. Correction des icônes et liens (Empêche l'affichage horizontal) */
+    .sidebar-menu {
+        position: relative; /* Indispensable pour que le z-index fonctionne */
+        z-index: 106000 !important; /* Doit être plus haut que .sidebar-nav */
+        display: flex !important;
+        flex-direction: column !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .nav-link {
+        display: flex !important;
+        color: #ffffff !important; /* Force le texte en blanc */
+        opacity: 1 !important;      /* Force l'opacité à 100% */
+        visibility: visible !important;
+        padding: 15px 20px !important;
+        text-decoration: none !important;
+    }
+
+    .nav-link i {
+        margin-right: 15px !important;
+        font-size: 1.2rem;
+        color: #00ccff !important;
+    }
+}
+
+
+/* ==================FIN=================FIN DE LA SIDEBAR (Barre de navigation) ================FIN===================*/
+
+
+
+/* --- Overlay de lisibilité multi-section ---------------------------------------------------------------------------- */
+.section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* On reprend tes critères exacts mais en adoucissant un peu le passage au transparent */
+    background: radial-gradient(
+        circle at 20% 50%, 
+        rgba(5, 10, 20, 0.8) 0%, 
+        rgba(5, 10, 20, 0.4) 40%, 
+        transparent 80%
+    );
+    z-index: 1; /* Derrière le texte mais devant le fond vif */
+    pointer-events: none;
+}
+
+/* On s'assure que tes sections sont en position relative pour que l'overlay ne s'échappe pas */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* On s'assure que le contenu (cartes, titres) reste bien au-dessus */
+.glass-infra-container, .section-header, .hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* ---FIN de l'overlay multi-section------------------------------------------------------------------------------------- */
+
+
+
+
+/* =============================================Section Accueil--ou--Dashboard======================================================= */
+/* --- Base & Background --- */
+body {
+    background: url("assets/img/background.webp") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: #fff;
+}
+
+
+/* --- TYPOGRAPHIE --- */
+.hero-title-main {
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    text-transform: none;
+    text-shadow: 0 0 20px rgba(0, 204, 255, 0.6);
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.last-name {
+    text-transform: uppercase; /* Force le nom de famille en MAJUSCULES */
+    font-weight: 900;
+}
+
+.typewriter-container {
+    display: flex;
+    align-items: center;
+    min-height: 45px;
+    margin-bottom: 25px;
+}
+
+.job-title {
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    color: #00EEFF;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+}
+
+.cursor {
+    font-size: 1.6rem;
+    color: #00ccff;
+    animation: blink 0.8s infinite;
+    margin-left: 8px;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #94a3b8;
+    max-width: 550px;
+}
+
+/* --- CONFIGURATION DES ICÔNES SOCIAUX --- */
+.social-links-grid {
+    display: flex;
+    gap: 25px;
+    margin: 20px 0;
+    justify-content: center; /* Centré par défaut */
+}
+
+/* Style de base pour toutes les icônes */
+.social-icon {
+    font-size: 1.8rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Couleurs Spécifiques (Official Brands) */
+.social-icon.linkedin { color: #0077b5; }
+.social-icon.github   { color: #ffffff; }
+.social-icon.email    { color: #ea4335; }
+.social-icon.whatsapp { color: #25d366; }
+
+/* Effet au Survol (Zoom + Lueur) */
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.2);
+    filter: drop-shadow(0 0 12px currentColor); /* La lueur prend la couleur de l'icône */
+}
+
+/* Ajustement pour PC (Alignement à gauche) */
+@media (min-width: 1024px) {
+    .social-links-grid {
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+}
+
+/* --- IMAGE ET ORBITE (Correction Couleurs & Rotation) --- */
+.orbit-container {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orbit-icons-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    animation: rotate-orbit 30s linear infinite;
+}
+
+.profile-img-large {
+    position: relative;
+    z-index: 20;
+    width: 350px; 
+    height: auto;
+    filter: drop-shadow(0 0 30px rgba(0, 204, 255, 0.4));
+}
+
+.orbit-icons-wrapper i {
+    position: absolute;
+    font-size: 2.5rem;
+    /* FORCE LA COULEUR DU HTML */
+    color: inherit !important; 
+    filter: drop-shadow(0 0 12px currentColor);
+    /* Contre-rotation pour garder l'icône droite */
+    animation: counter-rotate 30s linear infinite;
+}
+
+@keyframes rotate-orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes counter-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+.icon-1 { top: 5%; left: 50%; transform: translateX(-50%); }
+.icon-2 { bottom: 5%; left: 50%; transform: translateX(-50%); }
+.icon-3 { left: 5%; top: 50%; transform: translateY(-50%); }
+.icon-4 { right: 5%; top: 50%; transform: translateY(-50%); }
+
+/* --- BOUTONS CYBER --- */
+.cta-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.cyber-btn {
+    position: relative;
+    padding: 14px 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: 0.4s;
+    cursor: pointer;
+    clip-path: polygon(0% 0%, 90% 0%, 100% 30%, 100% 100%, 10% 100%, 0% 70%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+}
+
+.btn-primary {
+    background: #00ccff;
+    color: #050a14;
+}
+
+.btn-secondary {
+    background: rgba(0, 204, 255, 0.1);
+    color: #00ccff;
+    border: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+.cyber-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 204, 255, 0.4);
+    filter: brightness(1.2);
+}
+
+/* --- Status Tags --- */
+.system-status-tags {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+}
+
+.tag-item {
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(5px);
+    border-left: 3px solid #00ff41;
+    padding: 8px 15px;
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+.tag-item .label { color: #64748b; margin-right: 8px; }
+.tag-item .value { color: #00ff41; font-weight: bold; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .sidebar-nav { display: none; } /* On suppose un menu hamburger ici */
+    
+    .orbit-container { width: 300px; height: 300px; }
+    .profile-img-large { width: 220px; }
+    
+    .cta-container {
+      flex-direction: row;       /* Force l'alignement horizontal */
+      flex-wrap: wrap;           /* Permet de passer à la ligne si l'écran est VRAIMENT petit (iPhone SE) */
+      justify-content: center;    /* Centre les boutons sur mobile */
+      width: 100%;
+      gap: 10px;                 /* Espace réduit pour que ça rentre mieux */
+    }
+    .cyber-btn {
+      width: auto;               /* Les boutons ne prennent plus toute la largeur */
+      flex: 1;                   /* Ils se partagent l'espace équitablement */
+      max-width: 180px;          /* Empêche qu'ils deviennent trop géants */
+      padding: 12px 15px;        /* Un peu plus compact sur mobile */
+      font-size: 0.75rem;        /* Texte légèrement plus petit pour éviter les retours à la ligne */
+      justify-content: center;
+    }
+
+    .hero-title-main  {
+      margin-bottom: 5px; /* Réduit l'espace sous le titre pour un look plus compact sur mobile */
+    }
+
+    .typewriter-container {
+      margin-bottom: 15px; /* Réduit de 25px à 15px */
+      min-height: 35px;    /* Un peu plus compact */
+    }
+
+    .social-links-grid {
+      margin: 10px 0; /* Réduit les marges verticales */
+    }
+
+    .cta-container {
+      margin-bottom: 20px; /* Réduit l'espace sous les boutons */
+    }
+
+    .hero-subtitle {
+      font-size: 1rem; /* Réduit la taille du texte pour une meilleure lisibilité sur mobile */
+      line-height: 1.5; /* Réduit l'espacement entre les lignes */
+      max-width: 100%; /* Permet au texte de prendre toute la largeur disponible */
+      margin-top: 10px; /* Ajoute un peu d'espace au-dessus du sous-titre sur mobile */
+    }
+}
+
+/* ==================FIN=================FIN DE LA SECTION ACCUEIL--ou--Dashboard================FIN===================*/
+
+
+
+
+
+
+
+
+/* =============================================Section À Propos--ou--Profile Sec=====================================*/
+/* --- CONFIGURATION GLOBALE --- */
+:root {
+    --side-nav-width: 260px; /* À ajuster selon la largeur réelle de ta nav */
+    --neon-blue: #00ccff;
+    --neon-yellow: #ffcc00;
+}
+
+/* SECTION PARENTE : Gère la position par rapport à la nav */
+.about-cyber-system {
+    margin-left: var(--side-nav-width); /* PROTECTION ANTI-CHEVAUCHEMENT */
+    padding: 100px 50px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+
+/* GRANDE CARTE (Conteneur principal) */
+.glass-core-container {
+    background: rgba(6, 14, 28, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 204, 255, 0.15);
+    border-radius: 20px;
+    padding: 50px;
+    margin-top: -80px; /* Remonte la carte pour un effet de superposition */
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* STYLE DU TITRE PRINCIPAL (Inspiré de ton Hero) */
+.main-title-neon {
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Adaptatif */
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(0, 204, 255, 0.6);
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* TITRES DES CARTES */
+.card-hero-style {
+    /* Diminué : avant à 1.3rem max, maintenant à 1.1rem max */
+    font-size: clamp(0.9rem, 2vw, 1.1rem); 
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.4);
+    margin: 5px 0 2px 0; /* Marges réduites */
+}
+
+/* --- GRID & TERMINAL --- */
+.about-grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+}
+
+.terminal-wrapper {
+    background: rgba(3, 9, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.terminal-bar {
+    background: #1a2230;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.t-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+.r { background: #ff5f56; } .y { background: #ffbd2e; } .g { background: #27c93f; }
+
+.terminal-content-area { padding: 30px; font-family: 'JetBrains Mono', monospace; color: #ccd6f6; }
+.cmd-text { color: var(--neon-blue); margin-bottom: 20px; }
+
+/* --- CARTES D'INFO (Style M1) --- */
+.cards-side-stack { display: flex; flex-direction: column; gap: 20px; }
+
+.m1-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 20px; /* Padding réduit (avant 25px) pour des cartes plus fines */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s ease;
+}
+
+.m1-card:hover { 
+    background: rgba(0, 204, 255, 0.05); 
+    transform: translateX(10px); 
+}
+
+/* --- STYLE DES MOTS-CLÉS DANS LE TERMINAL --- */
+.terminal-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.terminal-tags .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #00ccff;
+    background: rgba(0, 204, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 204, 255, 0.2);
+}
+
+/* Ajustement de la grille pour que les cartes ne soient pas trop larges */
+.about-grid-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr; /* Donne un peu plus de place au terminal */
+    gap: 30px;
+}
+
+/* Angles colorés */
+.angle { position: absolute; width: 12px; height: 12px; }
+.top-l { top: -1px; left: -1px; border-top: 2px solid var(--neon-blue); border-left: 2px solid var(--neon-blue); }
+.bot-r { bottom: -1px; right: -1px; border-bottom: 2px solid var(--neon-yellow); border-right: 2px solid var(--neon-yellow); }
+
+.tag-label { color: #8b949e; font-size: 0.7rem; font-family: 'JetBrains Mono'; letter-spacing: 2px; }
+.sub-detail { color: var(--neon-blue); font-size: 0.85rem; font-weight: 500; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1100px) {
+    .about-cyber-system { margin-left: 0; padding: 60px 20px; }
+    .about-grid-layout { grid-template-columns: 1fr; }
+}
+
+/* ==================FIN=================FIN DE LA SECTION À PROPOS--ou--PROFILE SEC================FIN===================*/
+
+
+
+
+
+
+
+
+
+/* =============================================Section Expériences--ou--Infrastructure=====================================*/
+/* --- CONFIGURATION SECTION --- */
+.infra-section {
+    margin-left: var(--side-nav-width);
+    padding: 80px 50px;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+/* LA GRANDE CARTE VITRÉE (Conteneur) */
+.glass-infra-container {
+    background: rgba(6, 14, 28, 0.45);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(0, 204, 255, 0.15);
+    border-radius: 24px;
+    padding: 50px;
+    width: 100%;
+    max-width: 1240px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    margin-top: -60px; /* Remonte la carte pour un effet de superposition */
+}
+
+/* GRILLE INTERNE */
+.infra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* LES PETITES CARTES NÉON */
+.skill-card-neon {
+    position: relative;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 204, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+}
+
+/* L'EFFET DE LUMINOSITÉ FRAPPANTE AU SURVOL */
+.skill-card-neon:hover {
+    transform: translateY(-10px);
+    background: rgba(0, 204, 255, 0.05);
+    border-color: #00ccff;
+    /* Ombre portée externe (néon) + ombre interne */
+    box-shadow: 
+        0 0 20px rgba(0, 204, 255, 0.4), 
+        0 0 40px rgba(0, 204, 255, 0.1),
+        inset 0 0 15px rgba(0, 204, 255, 0.1);
+}
+
+/* CONTENU DE LA PETITE CARTE */
+.card-content {
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Icônes avec lueur */
+.skill-card-neon i {
+    font-size: 2.2rem;
+    color: #00ccff;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(0, 204, 255, 0.6));
+}
+
+.skill-card-neon p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-family: 'Syne', sans-serif;
+}
+
+/* Détails des compétences (Liste) */
+.skill-details {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-details li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.skill-details li::before {
+    content: ">> ";
+    color: #00ccff;
+    font-weight: bold;
+}
+
+/* STATUS DOT (Point lumineux vert) */
+.card-status {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-size: 0.65rem;
+    font-family: 'JetBrains Mono';
+    color: #64748b;
+}
+.card-status .dot {
+    height: 7px; width: 7px;
+    background: #27c93f;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    box-shadow: 0 0 10px #27c93f;
+}
+
+/* CAS SPÉCIAL : CARTE SÉCURITÉ (LUMINOSITÉ ROUGE) */
+.skill-card-neon.sec-special:hover {
+    border-color: #ff4b2b;
+    box-shadow: 0 0 20px rgba(255, 75, 43, 0.4), 0 0 40px rgba(255, 75, 43, 0.1);
+}
+.skill-card-neon.sec-special i { color: #ff4b2b; filter: drop-shadow(0 0 10px rgba(255, 75, 43, 0.6)); }
+.skill-card-neon.sec-special .dot.red { background: #ff5f56; box-shadow: 0 0 10px #ff5f56; }
+.skill-card-neon.sec-special .skill-details li::before { color: #ff4b2b; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .infra-section { margin-left: 0; padding: 40px 20px; }
+    .glass-infra-container { padding: 30px 20px; }
+}
+
+/* ==================FIN=================FIN DE LA SECTION Expériences--ou--Infrastructure================FIN===================*/
+
+
+
+
+
+
+
+
+/* =============================================Section Projets--ou--Projects=====================================*/
+/* --- CARTES PROJETS MODERNES --- */
+.project-card-neon {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 204, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.project-card-neon:hover {
+    transform: translateY(-10px);
+    border-color: #00ccff;
+    box-shadow: 0 15px 35px rgba(0, 204, 255, 0.2);
+}
+
+.project-img-container {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.project-img-container img {
+    width: 100%;
+    height: 100%;
+    object-cover: cover;
+    transition: 0.5s;
+}
+
+.project-card-neon:hover .project-img-container img {
+    transform: scale(1.1);
+    filter: blur(3px) brightness(0.5);
+}
+
+.project-overlay-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.project-card-neon:hover .project-overlay-btn { opacity: 1; }
+
+.voir-btn-neon {
+    background: transparent;
+    border: 2px solid #00ccff;
+    color: #00ccff;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+}
+
+.project-info { padding: 20px; }
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.project-tags span {
+    font-size: 0.7rem;
+    background: rgba(0, 204, 255, 0.1);
+    color: #00ccff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono';
+}
+
+/* --- MODAL ADMIN TERMINAL --- */
+.admin-login-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: none; /* Caché par défaut */
+    justify-content: center;
+    align-items: center;
+}
+
+.terminal-box {
+    width: 500px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.terminal-header {
+    background: #161b22;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+}
+
+.terminal-dot { height: 12px; width: 12px; border-radius: 50%; margin-right: 8px; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+.terminal-body { padding: 20px; }
+.cmd-text { font-family: 'JetBrains Mono'; font-size: 0.9rem; color: #d1d5da; margin-bottom: 10px; }
+.terminal-input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #30363d;
+    color: #58a6ff;
+    padding: 10px;
+    font-family: 'JetBrains Mono';
+    margin-bottom: 15px;
+}
+.terminal-btn {
+    background: #238636;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden { display: none; }
