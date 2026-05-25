@@ -1696,7 +1696,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider,
          onAuthStateChanged, signOut }
                               from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-/* ── Init Firebase ─────────────────────────────────────────── */
+/* ── Configuration Firebase ───────────────────────────────── */
 const app  = initializeApp({
   apiKey:           "AIzaSyCIJv7JdsQDwQaGiWqAFb7MkfFoTnmXEGQ",
   authDomain:       "portfolio-admin-12591.firebaseapp.com",
@@ -1709,18 +1709,19 @@ const db   = getFirestore(app);
 const auth = getAuth(app);
 const prov = new GoogleAuthProvider();
 
-/* ── AUTH ──────────────────────────────────────────────────── */
+/* ── AUTHENTIFICATION ──────────────────────────────────────── */
 window.loginAdmin  = () => signInWithPopup(auth, prov).catch(err => {
   console.error('Auth error:', err);
   alert('Erreur de connexion : ' + err.message);
 });
+
 window.logoutAdmin = () => signOut(auth).then(() => {
   document.getElementById('admin-panel').style.display = 'none';
   document.body.style.overflow = '';
   location.reload();
 });
 
-/* ── HELPERS ───────────────────────────────────────────────── */
+/* ── UTILS / HELPERS ───────────────────────────────────────── */
 function toRaw(url) {
   if (!url) return '';
   return url.includes('github.com')
@@ -1755,9 +1756,8 @@ function animCards() {
   });
 }
 
-/* ── LOAD PROJECTS ─────────────────────────────────────────── */
+/* ── CHARGEMENT DES PROJETS ────────────────────────────────── */
 window.loadProjects = async function() {
-  /* Cible STRICTEMENT le bon container via son id unique */
   const cont = document.getElementById('projects-container');
   if (!cont) { console.warn('loadProjects: #projects-container introuvable'); return; }
 
@@ -1765,16 +1765,10 @@ window.loadProjects = async function() {
   setLogStatus('chargement Firebase...');
 
   try {
-    /*
-     * On évite orderBy('date') qui nécessite un index Firestore et échoue
-     * silencieusement si l'index n'existe pas ou si des docs n'ont pas de
-     * champ 'date'. On récupère tout et on trie côté client.
-     */
     const snap = await getDocs(collection(db, 'projets'));
-
-    /* Convertir en tableau et trier du plus récent au plus ancien */
     const docs = [];
     snap.forEach(ds => docs.push({ id: ds.id, ...ds.data() }));
+    
     docs.sort((a, b) => {
       const ta = a.date ? (a.date.toMillis ? a.date.toMillis() : new Date(a.date).getTime()) : 0;
       const tb = b.date ? (b.date.toMillis ? b.date.toMillis() : new Date(b.date).getTime()) : 0;
@@ -1812,11 +1806,10 @@ window.loadProjects = async function() {
         <div class="proj-img-wrap">
           ${img
             ? `<img src="${img}" alt="${p.titre || ''}" loading="lazy"
-                    onerror="this.parentNode.innerHTML='<div class=proj-img-fallback><i class=\\'fas fa-project-diagram\\'></i></div>'">`
+                onerror="this.parentNode.innerHTML='<div class=proj-img-fallback><i class=\\'fas fa-project-diagram\\'></i></div>'">`
             : `<div class="proj-img-fallback"><i class="fas fa-project-diagram"></i></div>`}
           <div class="proj-overlay">
-            <button class="btn-see-pdf"
-              onclick="window.openPdf('${safePdf}','${safeTitle}')">
+            <button class="btn-see-pdf" onclick="window.openPdf('${safePdf}','${safeTitle}')">
               <i class="fas fa-file-pdf"></i> VOIR PDF
             </button>
           </div>
@@ -1826,8 +1819,7 @@ window.loadProjects = async function() {
           <div class="proj-desc">${p.description || ''}</div>
           <div class="proj-tags">${parseTags(p.tags)}</div>
           <div class="proj-actions">
-            <button class="btn-pdf"
-              onclick="window.openPdf('${safePdf}','${safeTitle}')">
+            <button class="btn-pdf" onclick="window.openPdf('${safePdf}','${safeTitle}')">
               <i class="fas fa-file-pdf"></i> VOIR PDF
             </button>
             <button class="btn-info" title="Catégories : ${cats}">
@@ -1843,15 +1835,12 @@ window.loadProjects = async function() {
 
   } catch (err) {
     console.error('loadProjects error:', err);
-    cont.innerHTML = `<div class="proj-empty">
-      <i class="fas fa-exclamation-triangle"></i>
-      <p>// Erreur Firebase : ${err.message}</p>
-    </div>`;
+    cont.innerHTML = `<div class="proj-empty"><i class="fas fa-exclamation-triangle"></i><p>// Erreur Firebase : ${err.message}</p></div>`;
     setLogStatus('⚠ erreur — voir console');
   }
 };
 
-/* ── LOAD CERTIFICATIONS ───────────────────────────────────── */
+/* ── CHARGEMENT DES CERTIFICATIONS ─────────────────────────── */
 window.loadCertifications = async function() {
   const cont = document.getElementById('certifications-container');
   if (!cont) return;
@@ -1876,7 +1865,6 @@ window.loadCertifications = async function() {
       return;
     }
 
-    /* Trier alphabétiquement côté client */
     const sortedOrgs = Object.keys(byOrg).sort();
     for (const org of sortedOrgs) {
       const rows = byOrg[org].map(c => {
@@ -1889,17 +1877,8 @@ window.loadCertifications = async function() {
             <span class="cert-name">${c.name || ''}</span>
             <div class="cert-actions">
               <span class="cbadge ok">VALIDATED</span>
-              ${c.credly
-                ? `<a href="${c.credly}" target="_blank" class="cert-link credly">
-                     <i class="fas fa-medal"></i> CREDLY
-                   </a>`
-                : ''}
-              ${c.pdf
-                ? `<button onclick="window.openPdf('${safePdf}','${safeName}')"
-                           class="cert-link pdf">
-                     <i class="fas fa-file-pdf"></i> PDF
-                   </button>`
-                : ''}
+              ${c.credly ? `<a href="${c.credly}" target="_blank" class="cert-link credly"><i class="fas fa-medal"></i> CREDLY</a>` : ''}
+              ${c.pdf ? `<button onclick="window.openPdf('${safePdf}','${safeName}')" class="cert-link pdf"><i class="fas fa-file-pdf"></i> PDF</button>` : ''}
             </div>
           </div>`;
         } else {
@@ -1910,9 +1889,7 @@ window.loadCertifications = async function() {
             <div class="cert-actions">
               <span class="cbadge pnd">IN_PROGRESS</span>
               <div class="prog-wrap">
-                <div class="prog-bar-track">
-                  <div class="prog-bar-fill" style="width:${c.progress || 0}%"></div>
-                </div>
+                <div class="prog-bar-track"><div class="prog-bar-fill" style="width:${c.progress || 0}%"></div></div>
                 <span class="prog-pct">${c.progress || 0}%</span>
               </div>
             </div>
@@ -1937,31 +1914,25 @@ window.loadCertifications = async function() {
   }
 };
 
-/* ── MAINTENANCE LIST ──────────────────────────────────────── */
+/* ── LISTE DE MAINTENANCE ADMIN ────────────────────────────── */
 window.loadMaint = async function(forcedMode) {
   const cont = document.getElementById('maint-list');
   if (!cont) return;
 
-  /* Priorité : paramètre direct > window.infraMode */
   const mode = forcedMode || window.infraMode || 'project';
   const col  = (mode === 'project') ? 'projets' : 'certifications';
 
-  cont.innerHTML = `<div style="font-family:var(--font-mono);font-size:.75rem;
-    color:var(--c-muted);padding:1rem;letter-spacing:1px">
-    <i class="fas fa-spinner fa-spin"></i> SCANNING ${col.toUpperCase()}...</div>`;
+  cont.innerHTML = `<div style="font-family:var(--font-mono);font-size:.75rem;color:var(--c-muted);padding:1rem;letter-spacing:1px"><i class="fas fa-spinner fa-spin"></i> SCANNING ${col.toUpperCase()}...</div>`;
 
   try {
     const snap = await getDocs(collection(db, col));
-
     cont.innerHTML = '';
 
     if (snap.empty) {
-      cont.innerHTML = `<div style="font-family:var(--font-mono);font-size:.75rem;
-        color:var(--c-muted);padding:1rem;text-align:center">// BASE VIDE</div>`;
+      cont.innerHTML = `<div style="font-family:var(--font-mono);font-size:.75rem;color:var(--c-muted);padding:1rem;text-align:center">// BASE VIDE</div>`;
       return;
     }
 
-    /* Trier du plus récent au plus ancien côté client */
     const items = [];
     snap.forEach(ds => items.push({ id: ds.id, ...ds.data() }));
     items.sort((a, b) => {
@@ -1981,8 +1952,7 @@ window.loadMaint = async function(forcedMode) {
           <div class="maint-name">${name}</div>
           <div class="maint-id">UID: ${d.id.substring(0, 10)}…</div>
         </div>
-        <button class="btn-del"
-          onclick="window.deleteEntry('${d.id}','${col}')">
+        <button class="btn-del" onclick="window.deleteEntry('${d.id}','${col}')">
           <i class="fas fa-trash-alt"></i> SUPPRIMER
         </button>
       </div>`;
@@ -1990,12 +1960,11 @@ window.loadMaint = async function(forcedMode) {
 
   } catch (err) {
     console.error('loadMaint error:', err);
-    cont.innerHTML = `<div style="font-family:var(--font-mono);font-size:.75rem;
-      color:var(--c-red);padding:1rem">// ⚠ Erreur : ${err.message}</div>`;
+    cont.innerHTML = `<div style="font-family:var(--font-mono);font-size:.75rem;color:var(--c-red);padding:1rem">// ⚠ Erreur : ${err.message}</div>`;
   }
 };
 
-/* ── DELETE ENTRY ──────────────────────────────────────────── */
+/* ── SUPPRESSION D'UNE ENTRÉE ──────────────────────────────── */
 window.deleteEntry = async function(id, col) {
   if (!confirm('⚠ Confirmer la suppression de cet enregistrement ?')) return;
   try {
@@ -2009,10 +1978,9 @@ window.deleteEntry = async function(id, col) {
   }
 };
 
-/* ── DEPLOY PROJECT ────────────────────────────────────────── */
+/* ── DEPLOIEMENT D'UN PROJET ───────────────────────────────── */
 window.deployProject = async function() {
-  const cats = [...document.querySelectorAll('#form-proj .cat-lbl input:checked')]
-                 .map(i => i.value).join(' ');
+  const cats = [...document.querySelectorAll('#form-proj .cat-lbl input:checked')].map(i => i.value).join(' ');
 
   const data = {
     id_label:    document.getElementById('p-idlabel').value.trim(),
@@ -2040,10 +2008,10 @@ window.deployProject = async function() {
     await addDoc(collection(db, 'projets'), data);
     btn.innerHTML = '<i class="fas fa-check"></i> DÉPLOYÉ !';
     setTimeout(() => { btn.innerHTML = orig; btn.disabled = false; }, 2200);
-    /* Reset formulaire */
-    document.getElementById('form-proj')
-      .querySelectorAll('input, textarea, select')
-      .forEach(el => { if (el.type !== 'checkbox') el.value = ''; else el.checked = false; });
+    
+    document.getElementById('form-proj').querySelectorAll('input, textarea, select').forEach(el => { 
+      if (el.type !== 'checkbox') el.value = ''; else el.checked = false; 
+    });
     window.loadProjects();
   } catch (err) {
     console.error('deployProject error:', err);
@@ -2052,7 +2020,7 @@ window.deployProject = async function() {
   }
 };
 
-/* ── DEPLOY CERT ───────────────────────────────────────────── */
+/* ── DEPLOIEMENT D'UNE CERTIFICATION ───────────────────────── */
 window.deployCert = async function() {
   const data = {
     org:      document.getElementById('c-org').value.trim(),
@@ -2078,10 +2046,8 @@ window.deployCert = async function() {
     await addDoc(collection(db, 'certifications'), data);
     btn.innerHTML = '<i class="fas fa-check"></i> DÉPLOYÉ !';
     setTimeout(() => { btn.innerHTML = orig; btn.disabled = false; }, 2200);
-    /* Reset formulaire */
-    document.getElementById('form-cert')
-      .querySelectorAll('input, textarea')
-      .forEach(el => el.value = '');
+    
+    document.getElementById('form-cert').querySelectorAll('input, textarea').forEach(el => el.value = '');
     window.loadCertifications();
   } catch (err) {
     console.error('deployCert error:', err);
@@ -2090,12 +2056,59 @@ window.deployCert = async function() {
   }
 };
 
+/* ── FORMULAIRE DE CONTACT (EMAILJS) SANS RECHARGEMENT ────── */
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const statusDiv = document.getElementById('form-status');
+    const submitBtn = this.querySelector('.btn-submit') || this.querySelector('button[type="submit"]');
+    
+    if (submitBtn) {
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> TRANSMISSION...';
+      submitBtn.disabled = true;
+    }
+
+    // Envoi des données via EmailJS
+    emailjs.sendForm('service_y69feyf', 'template_6b15pwh', this)
+      .then(function() {
+        if (submitBtn) submitBtn.innerHTML = '<i class="fas fa-check"></i> TRANSMIS';
+        
+        if (statusDiv) {
+          statusDiv.style.display = "block";
+          statusDiv.style.color = "var(--c-cyan)";
+          statusDiv.innerHTML = "> [SUCCESS] : Message envoyé sur le réseau avec succès.";
+        }
+        
+        setTimeout(() => {
+          contactForm.reset();
+          if (submitBtn) {
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> ENVOYER';
+            submitBtn.disabled = false;
+          }
+          if (statusDiv) statusDiv.style.display = "none";
+        }, 4000);
+
+      }, function(error) {
+        if (submitBtn) {
+          submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ECHEC';
+          submitBtn.disabled = false;
+        }
+        if (statusDiv) {
+          statusDiv.style.display = "block";
+          statusDiv.style.color = "var(--c-red)";
+          statusDiv.innerHTML = "> [ERROR] : Échec de la transmission. Code: " + JSON.stringify(error);
+        }
+      });
+  });
+}
+
 /* ── AUTH STATE OBSERVER ───────────────────────────────────── */
 onAuthStateChanged(auth, user => {
   const panel = document.getElementById('admin-panel');
 
   if (user && user.email === 'icompaore554@gmail.com') {
-    /* Utilisateur admin connecté → on adapte le bouton sidebar */
     document.querySelectorAll('.sidebar-admin-btn').forEach(b => {
       b.innerHTML              = '<i class="fas fa-lock-open"></i> ADMIN ACTIF';
       b.style.borderColor      = 'var(--c-green)';
@@ -2106,7 +2119,6 @@ onAuthStateChanged(auth, user => {
       };
     });
   } else {
-    /* Pas connecté → bouton normal */
     document.querySelectorAll('.sidebar-admin-btn').forEach(b => {
       b.innerHTML         = '<i class="fas fa-lock"></i> ACCÈS ADMIN';
       b.style.borderColor = '';
@@ -2115,7 +2127,7 @@ onAuthStateChanged(auth, user => {
     });
   }
 
-  /* Chargement public au démarrage, qu'on soit admin ou non */
+  /* Chargement initial des données publiques */
   window.loadProjects();
   window.loadCertifications();
 });
