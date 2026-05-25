@@ -1,3 +1,0 @@
-"scripts": {
-  "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --minify"
-}
