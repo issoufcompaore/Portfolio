@@ -1022,63 +1022,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .skills-grid{grid-template-columns:repeat(2,1fr)}
 }
 
-@media(max-width:900px){
-  .sidebar-nav{transform:translateX(-100%)}
-  .sidebar-nav.active{transform:translateX(0)}
-  .hamburger-menu{display:flex}
-  .main-content{margin-left:0}
-  
-  /* --- Section Accueil sur Tablette --- */
-  .hero-inner{
-    flex-direction: column-reverse; 
-    gap: 50px; /* Un peu plus d'espace pour accueillir le débordement */
-    text-align: center;
-  }
-  
-  .hero-visual{
-    width: 200px;
-    height: 200px;
-    margin-top: 0;   
-    margin-left: 0;  
-    position: relative;
-    overflow: visible !important; /* Autorise la photo à sortir du cadre */
-  }
-  
-  /* CONFIGURATION POUR FAIRE SORTIR LA PHOTO EN AVANT */
-  .profile-img{
-    position: absolute !important;
-    /* On la repositionne pour qu'elle s'aligne sur le bas du cercle */
-    top: -45px;       /* Pousse la tête vers le haut, hors du cercle */
-    left: 2%;
-    right: 2%;
-    bottom: 0;
-    width: 90% !important;
-    height: auto !important; 
-    
-    /* Priorité absolue : passe devant les cercles et les icônes */
-    z-index: 999 !important; 
-    
-    /* Optionnel : un léger effet d'ombre pour accentuer la sortie du cadre */
-    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.6)) drop-shadow(0 0 25px rgba(0,204,255,0.2));
-  }
-  
-  /* On force les cercles de l'orbite et les icônes à rester derrière */
-  .orbit-ring, .oi, .orbit-visual {
-    z-index: 1 !important;
-  }
-  
-  .hero-greeting, .typewriter-wrap { justify-content: center; }
-  .social-row, .cta-row{justify-content:center}
-  .hero-sub{max-width:100%}
-  
-  /* --- Reste de la grille --- */
-  .about-grid{grid-template-columns:1fr}
-  .skills-grid{grid-template-columns:repeat(2,1fr)}
-  .contact-grid{grid-template-columns:1fr}
-  .section-wrap{padding:70px 28px}
-  .status-tags{display:none}
-}
-
 @media(max-width:640px){
   #accueil{padding:80px 20px 40px}
   
@@ -1088,9 +1031,23 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     overflow: visible !important;
   }
   
+  /* --- REMONTER UNIQUEMENT LES CERCLES --- */
+  .orbit-ring, .orbit-visual {
+    transform: translateY(-40px) !important; /* Remonte les cercles de 40px vers le haut */
+    z-index: 1 !important;
+  }
+  
+  /* Les icônes sur les cercles suivent le mouvement */
+  .oi {
+    transform: translateY(-40px) !important;
+    z-index: 1 !important;
+  }
+  
   /* AJUSTEMENT PHOTO POUR MOBILE */
   .profile-img {
-    top: -90px;    /* Sort encore plus vers le haut sur petit écran */
+    /* Initialement à -90px, on descend sa position top de 40px (-90 + 40 = -50px) 
+       pour qu'elle reste visuellement à la même place sur l'écran malgré la montée des cercles */
+    top: -50px !important;    
     left: 2%;
     right: 2%;
     bottom: 0;
