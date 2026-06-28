@@ -1088,14 +1088,21 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     overflow: visible !important;
   }
 
-  /* --- REPOSITIONNEMENT PROPRE : DES CERCLES PARFAITS ET EN ROTATION --- */
-  .orbit-ring, .orbit-visual, .oi {
-    /* On supprime la marge qui écrasait les cercles */
-    margin-top: 0 !important; 
-    
-    /* On utilise la position relative pour remonter le bloc sans déformation */
-    position: relative !important;
-    top: -65px !important; 
+  /* --- LA BONNE MÉTHODE : ON DÉPLACE LE BLOC ENTIER DES CERCLES --- */
+  .orbit-visual {
+    position: absolute !important;
+    top: -65px !important;  /* Remonte le bloc complet des cercles et des icônes */
+    left: 0;
+    right: 0;
+    margin: 0 auto !important;
+    transform: none !important; /* Annule tout transform parasite */
+  }
+
+  /* On nettoie les styles appliqués précédemment sur les sous-éléments */
+  .orbit-ring, .oi {
+    margin-top: 0 !important;
+    position: static !important;
+    top: auto !important;
   }
   
   /* AJUSTEMENT PHOTO POUR MOBILE */
