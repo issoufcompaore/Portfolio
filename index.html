@@ -307,7 +307,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   width:420px;
   height:420px;
   flex-shrink:0;
-  margin-top: -165px; /* Ajoute cette ligne pour faire monter tout le bloc de 40 pixels */
+  margin-top: -150px; /* Ajoute cette ligne pour faire monter tout le bloc */
 }
 .orbit-ring{
   position:absolute;inset:0;border-radius:50%;
@@ -1053,10 +1053,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     right: 2%;
     bottom: 0;
     width: 90% !important;
-    height: auto !important;
-    
-    /* On casse le "border-radius: 50%" qui coupait le bas de ton corps */
-    border-radius: 0 0 100px 100px !important; 
+    height: auto !important; 
     
     /* Priorité absolue : passe devant les cercles et les icônes */
     z-index: 999 !important; 
