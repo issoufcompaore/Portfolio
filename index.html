@@ -1083,22 +1083,24 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   #accueil{padding:80px 20px 40px}
   
   .hero-visual{
-    width: 200px; /* Légèrement réduit pour mobile pour éviter les chevauchements */
+    width: 200px; 
     height: 200px;
     overflow: visible !important;
   }
+
+  /* --- REPOSITIONNEMENT PROPRE : DES CERCLES PARFAITS ET EN ROTATION --- */
   .orbit-ring, .orbit-visual, .oi {
-      /* On utilise margin-top à la place de transform pour préserver l'animation active */
-      margin-top: -65px !important;
-      z-index: 1 !important;
-    }
-
-
-
+    /* On supprime la marge qui écrasait les cercles */
+    margin-top: 0 !important; 
+    
+    /* On utilise la position relative pour remonter le bloc sans déformation */
+    position: relative !important;
+    top: -65px !important; 
+  }
   
   /* AJUSTEMENT PHOTO POUR MOBILE */
   .profile-img {
-    top: -90px;    /* Sort encore plus vers le haut sur petit écran */
+    top: -90px;    
     left: 2%;
     right: 2%;
     bottom: 0;
