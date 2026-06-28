@@ -1036,13 +1036,13 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   }
   
   .hero-visual{
-    width: 200px;
-    height: 200px;
-    margin-top: 0;   
-    margin-left: 0;  
-    position: relative;
-    overflow: visible !important; /* Autorise la photo à sortir du cadre */
-  }
+      width: 200px;
+      height: 200px;
+      margin-top: -60px;   /* Modifié de 0 à -60px pour faire remonter le bloc */
+      margin-left: 0;  
+      position: relative;
+      overflow: visible !important; /* Autorise la photo à sortir du cadre */
+    }
   
   /* CONFIGURATION POUR FAIRE SORTIR LA PHOTO EN AVANT */
   .profile-img{
@@ -1109,7 +1109,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     bottom: 0;
     width: 96% !important;
     height: auto !important;
-    
+
     z-index: 999 !important;
   }
 </style>
