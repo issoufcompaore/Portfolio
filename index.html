@@ -1087,13 +1087,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     height: 200px;
     overflow: visible !important;
   }
-  .orbit-ring, .orbit-visual {
-    transform: translateY(-65px) !important; /* Remonte les cercles de 40px vers le haut */
-  }
-
-  /* Les icônes sur les cercles suivent le mouvement */
-  .oi {
-    transform: translateY(-65px) !important;
+.orbit-ring, .orbit-visual, .oi {
+    /* On utilise margin-top à la place de transform pour préserver l'animation active */
+    margin-top: -65px !important; 
   }
 
 
