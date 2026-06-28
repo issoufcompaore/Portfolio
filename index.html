@@ -1085,14 +1085,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .hero-visual{
     width: 200px; 
     height: 200px;
+    margin-top: -90px;   /* Ajouté pour faire monter encore plus haut le bloc complet sur mobile */
     overflow: visible !important;
   }
 
   /* --- SÉCURISATION DU BLOC D'ORBITE (CERCLES + ICÔNES) --- */
   .orbit-visual {
-    /* On utilise la position relative sur le conteneur pour remonter tout le monde de 65px */
     position: relative !important;
-    top: 65px !important;
+    top: 0px !important; /* Changé de 65px à 0px pour éviter de pousser l'orbite vers le bas */
     z-index: 1 !important;
   }
 
@@ -1103,7 +1103,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   
   /* AJUSTEMENT PHOTO POUR MOBILE */
   .profile-img {
-    top: -90px;    
+    top: -45px;    /* Ajusté de -90px à -45px pour que le portrait reste bien centré par rapport au cercle */
     left: 2%;
     right: 2%;
     bottom: 0;
@@ -1112,16 +1112,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     
     z-index: 999 !important;
   }
-  
-  .skills-grid{grid-template-columns:1fr}
-  .gate-grid{grid-template-columns:1fr}
-  .fgrid2{grid-template-columns:1fr}
-  .certs-grid{grid-template-columns:1fr}
-  .cf-row{grid-template-columns:1fr}
-  .section-wrap{padding:60px 18px}
-  .filter-bar{gap:6px}
-  .filter-btn{padding:6px 12px;font-size:.65rem}
-}
 </style>
 </head>
 <body>
