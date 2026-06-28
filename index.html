@@ -1088,21 +1088,17 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     overflow: visible !important;
   }
 
-  /* --- LA BONNE MÉTHODE : ON DÉPLACE LE BLOC ENTIER DES CERCLES --- */
+  /* --- SÉCURISATION DU BLOC D'ORBITE (CERCLES + ICÔNES) --- */
   .orbit-visual {
-    position: absolute !important;
-    top: -65px !important;  /* Remonte le bloc complet des cercles et des icônes */
-    left: 0;
-    right: 0;
-    margin: 0 auto !important;
-    transform: none !important; /* Annule tout transform parasite */
+    /* On utilise la position relative sur le conteneur pour remonter tout le monde de 65px */
+    position: relative !important;
+    top: -65px !important;
+    z-index: 1 !important;
   }
 
-  /* On nettoie les styles appliqués précédemment sur les sous-éléments */
-  .orbit-ring, .oi {
-    margin-top: 0 !important;
-    position: static !important;
-    top: auto !important;
+  /* On s'assure de laisser les cercles respirer dans leur format d'origine */
+  .orbit-ring {
+    display: block !important;
   }
   
   /* AJUSTEMENT PHOTO POUR MOBILE */
