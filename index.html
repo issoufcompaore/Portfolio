@@ -259,18 +259,47 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   font-size:1rem;color:var(--c-muted);line-height:1.75;
   max-width:480px;margin-bottom:28px;
 }
-.social-row{display:flex;gap:16px;margin-bottom:28px}
-.social-btn{
-  width:40px;height:40px;border-radius:8px;
-  border:1px solid var(--c-border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;transition:all .3s;color:var(--c-muted);
+/* Style de base pour les boutons de réseaux sociaux */
+.social-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
 }
-.social-btn:hover{transform:translateY(-4px);border-color:currentColor;box-shadow:0 8px 20px rgba(0,0,0,.4)}
-.social-btn.li:hover{color:#0077b5;border-color:#0077b5;background:rgba(0,119,181,.1)}
-.social-btn.gh:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.06)}
-.social-btn.em:hover{color:#ea4335;border-color:#ea4335;background:rgba(234,67,53,.1)}
-.social-btn.wa:hover{color:#25d366;border-color:#25d366;background:rgba(37,211,102,.1)}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03); /* Fond très léger par défaut */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Couleurs spécifiques basées sur vos classes HTML */
+.social-btn.li { color: #0077b5; border-color: rgba(0, 119, 181, 0.3); } /* Bleu LinkedIn */
+.social-btn.gh { color: #8b949e; border-color: rgba(139, 148, 158, 0.3); } /* Gris GitHub */
+.social-btn.em { color: #ea4335; border-color: rgba(234, 67, 53, 0.3); }  /* Rouge Email */
+.social-btn.wa { color: #25d366; border-color: rgba(37, 211, 102, 0.3); } /* Vert WhatsApp */
+
+/* Effet au survol (Hover) pour les illuminer au passage de la souris */
+.social-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn.li:hover { color: #00a0dc; border-color: #0077b5; box-shadow: 0 0 10px rgba(0, 119, 181, 0.4); }
+.social-btn.gh:hover { color: #ffffff; border-color: #ffffff; box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
+.social-btn.em:hover { color: #ff6b62; border-color: #ea4335; box-shadow: 0 0 10px rgba(234, 67, 53, 0.4); }
+.social-btn.wa:hover { color: #34e073; border-color: #25d366; box-shadow: 0 0 10px rgba(37, 211, 102, 0.4); }
+
+
+
 .cta-row{display:flex;gap:14px;flex-wrap:wrap}
 .btn-cyber{
   display:inline-flex;align-items:center;gap:9px;
@@ -1078,8 +1107,17 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .typewriter-wrap { 
     justify-content: center;
   }
-  .social-row, .cta-row{justify-content:center}
-  .hero-sub{max-width:100%}
+  .social-row, .cta-row{
+    justify-content:center
+  }
+
+  .hero-sub{
+    max-width:100%;
+    justify-content: justify;
+    font-size: 0.95rem; /* ◄ MODIFIEZ CETTE VALEUR (Ex: 0.9rem, 14px, etc.) */
+    max-width: 600px;
+    color: var(--c-slate);   
+  }
   
   /* --- Reste de la grille --- */
   .about-grid{grid-template-columns:1fr}
@@ -1112,7 +1150,16 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     display: block !important;
 
   }
+
+  .hero-sub{
+    max-width:100%;
+    justify-content: justify;
+    font-size: 0.95rem; /* ◄ MODIFIEZ CETTE VALEUR (Ex: 0.9rem, 14px, etc.) */
+    max-width: 600px;
+    color: var(--c-slate);   
+  }
   
+
   /* AJUSTEMENT PHOTO POUR MOBILE */
   .profile-img {
     top: -10px;    
@@ -1192,7 +1239,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
         <span id="typewriter"></span>
         <span class="cursor-blink">|</span>
       </div>
-      <p class="hero-sub">Expertise en infrastructures critiques, réseaux sécurisés et administration systèmes. Passionné par la cybersécurité et les technologies émergentes.</p>
+      <p class="hero-sub">Administrateur Réseaux & Systèmes orienté sécurité. Sérieux, dynamique et en apprentissage permanent pour concevoir, gérer et protéger vos infrastructures.</p>
       <div class="social-row">
         <a href="https://www.linkedin.com/in/compaore-issouf/" target="_blank" class="social-btn li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/issoufcompaore" target="_blank" class="social-btn gh" title="GitHub"><i class="fab fa-github"></i></a>
@@ -1244,16 +1291,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
         </div>
         <div class="terminal-body">
           <div class="t-cmd">$ cat expertise.md</div>
-          <p class="bio-p">Futur expert en <strong>Infrastructures Critiques</strong>, je me spécialise dans la conception de réseaux résilients et la sécurisation des systèmes d'information.</p>
-          <p class="bio-p">Mon parcours est guidé par une maîtrise rigoureuse, allant de l'administration <strong>Windows Server / Linux</strong> au déploiement de solutions <strong>FortiGate, Cisco et Proxmox</strong>.</p>
-          <p class="bio-p">Diplômé d'un Bachelor en <strong>Admin Systèmes & Réseaux</strong> au Collège de Paris — Campus Tunis.</p>
+          <p class="bio-p"><strong>Administrateur Réseaux</strong> diplômé, je mets ma rigueur et mon dynamisme au service de la conception d'<strong>infrastructures résilientes</strong> et de la <strong>sécurité des systèmes d'information</strong>. Conscient que la technologie évolue sans cesse, je m'inscris dans une démarche d'apprentissage permanent pour parfaire mes interventions.</p>
+          <p class="bio-p">Mon parcours pratique m'a permis de consolider une maîtrise allant du <strong>support technique</strong> et de la <strong>maintenance hardware/software</strong>, à la gestion d'environnements complexes sous <strong>Windows Server / Linux</strong> et aux solutions de <strong>virtualisation</strong> (VMware, Proxmox).</p>
           <div class="t-tags">
-            <span class="t-tag">#Firewall</span>
+            <span class="t-tag">#Networking</span>
+            <span class="t-tag">#Security</span>
             <span class="t-tag">#Virtualization</span>
-            <span class="t-tag">#ActiveDirectory</span>
-            <span class="t-tag">#CyberSec</span>
-            <span class="t-tag">#SIEM</span>
-            <span class="t-tag">#Zabbix</span>
+            <span class="t-tag">#WindowsServer</span>
+            <span class="t-tag">#Maintenance</span>
           </div>
           <span class="t-cursor">_</span>
         </div>
@@ -1263,7 +1308,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
           <div class="c-corner c-tl"></div><div class="c-corner c-br"></div>
           <div class="info-label">🎓 DIPLÔME ACTUEL</div>
           <div class="info-val">Bachelor Administrateur</div>
-          <div class="info-sub">Systèmes & Réseaux Informatiques</div>
+          <div class="info-sub">Réseaux Informatiques</div>
         </div>
         <div class="info-card">
           <div class="c-corner c-tl"></div><div class="c-corner c-br"></div>
@@ -1296,50 +1341,56 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <h2 class="section-title">/ Stack <span>Technique</span></h2>
     </div>
     <div class="skills-grid">
+    <!-- CARD 1: RÉSEAUX & SÉCURITÉ -->
       <div class="skill-card">
         <div class="c-corner c-tl"></div><div class="c-corner c-br"></div>
         <span class="skill-tag net">NET_01</span>
-        <div class="skill-title"><i class="fas fa-network-wired"></i> Networking</div>
+        <div class="skill-title"><i class="fas fa-shield-alt"></i> Réseaux & Sécurité</div>
         <ul class="skill-list">
-          <li class="skill-item">FortiGate / PFsense</li>
-          <li class="skill-item">OSPF / BGP / SD-WAN</li>
-          <li class="skill-item">VPN IPsec & OpenVPN</li>
-          <li class="skill-item">Cisco IOS / Packet Tracer / GNS3</li>
+          <li class="skill-item">FortiGate / Cisco Routing & Switching</li>
+          <li class="skill-item">Architecture LAN/WAN, protocoles de routage & VLANs</li>
+          <li class="skill-item">Configuration de VPN (IPsec / SSL) & Pare-feux</li>
+          <li class="skill-item">Analyse de vulnérabilités & Audit</li>
         </ul>
       </div>
+
+    <!-- CARD 2: SYSTÈMES & SUPERVISION -->
       <div class="skill-card">
         <div class="c-corner c-tl"></div><div class="c-corner c-br"></div>
         <span class="skill-tag sys">SYS_02</span>
-        <div class="skill-title"><i class="fab fa-microsoft"></i> System Admin</div>
+        <div class="skill-title"><i class="fas fa-server"></i> Systèmes & Supervision</div>
         <ul class="skill-list">
-          <li class="skill-item">Active Directory / GPO</li>
-          <li class="skill-item">Hardening LAPS</li>
-          <li class="skill-item">Azure & M365 Admin</li>
-          <li class="skill-item">Windows Server (2012,2019,2022)</li>
+          <li class="skill-item">Linux (Ubuntu/Debian) & Windows Server</li>
+          <li class="skill-item">Active Directory / GPO (Gestion des accès et utilisateurs)</li>
+          <li class="skill-item">Services réseaux fondamentaux (DNS, DHCP, SSH, FTP)</li>
+          <li class="skill-item">Supervision complète d'infrastructure avec Zabbix</li>
         </ul>
       </div>
+
+    <!-- CARD 3: VIRTUALISATION & MAQUETTAGE -->
       <div class="skill-card">
         <div class="c-corner c-tl"></div><div class="c-corner c-br"></div>
-        <span class="skill-tag ops">OPS_03</span>
-        <div class="skill-title"><i class="fab fa-linux"></i> Ops & Automation</div>
+        <span class="skill-tag virt">VIRT_03</span>
+        <div class="skill-title"><i class="fas fa-layer-group"></i> Virtualisation & Lab</div>
         <ul class="skill-list">
-          <li class="skill-item">Docker / Ansible</li>
-          <li class="skill-item">Bash & Python Scripts</li>
-          <li class="skill-item">VMware / Proxmox VE</li>
-          <li class="skill-item">Git / CI/CD basics</li>
+          <li class="skill-item">VMware Workstation / Proxmox VE</li>
+          <li class="skill-item">Simulation et maquettage réseau sur GNS3, Packet Tracer</li>
+          <li class="skill-item">Création de laboratoires virtuels pour tests et formations</li>
+          <li class="skill-item">Déploiement de services et applications dans des environnements virtualisés</li>
         </ul>
       </div>
-      <div class="skill-card alert">
-        <div class="c-corner c-tl" style="border-color:var(--c-red)"></div>
-        <div class="c-corner c-br" style="border-color:var(--c-orange)"></div>
-        <span class="skill-tag sec">SEC_04</span>
-        <div class="skill-title"><i class="fas fa-user-shield"></i> Cyber Security</div>
-        <ul class="skill-list">
-          <li class="skill-item">Wazuh SIEM / IDS</li>
-          <li class="skill-item">Zabbix Monitoring</li>
-          <li class="skill-item">Audit & Hardening</li>
-          <li class="skill-item">Pentest (CTF / TryHackMe)</li>
-        </ul>
+
+    <!-- CARD 4: MAINTENANCE & SUPPORT -->
+      <div class="skill-card">
+      <div class="c-corner c-tl"></div><div class="c-corner c-br"></div>
+      <span class="skill-tag maint">MAINT_04</span>
+      <div class="skill-title"><i class="fas fa-tools"></i> Maintenance & Support</div>
+      <ul class="skill-list">
+        <li class="skill-item">Maintenance préventive/curative & Plans de Sauvegarde (Backup)</li>
+        <li class="skill-item">Diagnostic de pannes matérielles (Hardware) et logicielles</li>
+        <li class="skill-item">Support utilisateur, gestion des incidents & Ticket-tracking</li>
+        <li class="skill-item">Câblage structuré, brassage et déploiement de postes de travail</li>
+      </ul>
       </div>
     </div>
   </div>
