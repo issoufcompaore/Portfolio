@@ -1319,7 +1319,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
         <div class="info-card">
           <div class="c-corner c-tl"></div><div class="c-corner c-br"></div>
           <div class="info-label">📍 LOCALISATION</div>
-          <div class="info-val">Tunisie</div>
+          <div class="info-val">BURKINA FASO</div>
+          <div class="info-sub">Ouagadougou</div>
           <div class="info-sub">Disponible pour mobilité internationale</div>
         </div>
         <div class="info-card">
@@ -1584,10 +1585,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
     <!-- Manager -->
     <div id="admin-manager" class="panel-body" style="display:none">
-      <button class="btn-back" onclick="backToGate()"><i class="fas fa-arrow-left"></i> RETURN_TO_GATE</button>
+      <button class="btn-back" onclick="backToGate()"><i class="fas fa-arrow-left"></i> RETOUR</button>
       <div class="panel-tabs">
         <button class="tab-btn active" id="tbtn-deploy" onclick="switchTab('deploy')"><i class="fas fa-rocket"></i> DÉPLOYER</button>
-        <button class="tab-btn" id="tbtn-manage" onclick="switchTab('manage')"><i class="fas fa-database"></i> MAINTENANCE</button>
+        <button class="tab-btn" id="tbtn-manage" onclick="switchTab('manage')"><i class="fas fa-database"></i> LISTES</button>
       </div>
       <!-- Deploy tab -->
       <div id="tab-deploy" style="margin-top:16px">
@@ -1655,7 +1656,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
     <div class="panel-ft">
       <span class="ft-path" id="ft-path">ROOT://SECURE_ADMIN/GATEWAY</span>
-      <button class="btn-terminate" onclick="logoutAdmin()"><i class="fas fa-sign-out-alt"></i> TERMINATE_SESSION</button>
+      <button class="btn-terminate" onclick="logoutAdmin()"><i class="fas fa-sign-out-alt"></i> FERMER_SESSION</button>
     </div>
   </div>
 </div>
@@ -1699,7 +1700,7 @@ window.addEventListener('scroll', () => {
 
 /* ─── TYPEWRITER ────────────────────────────────────────────── */
 const tw = document.getElementById('typewriter');
-const phrases = ['Admin Systèmes & Réseaux','Expert Junior IT','Passionné de Cybersécurité','FortiGate · Cisco · Proxmox'];
+const phrases = ['Administrateur Réseaux', 'Technicien Support IT', 'Technicien d\'Infrastructures IT', 'Gestionnaire de Parc Informatique', 'Expert Junior IT', 'Spécialiste en Virtualisation', 'Analyste Junior en Sécurité Informatique'];
 let pi=0, ci=0, del=false;
 function type(){
   const p = phrases[pi];
